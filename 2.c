@@ -4,13 +4,13 @@
 
 
 char* join (char* words[], int n) { 
-    char *cout = malloc(255); // выделяем память
+    char *merge_words = malloc (255); // выделяем память
     for (int i = 0; i < n - 1; i++) {
-        strcat (cout, words[i]); // запысываем в cout значение words[i]
-        strcat (cout, " "); // записываем в cout " "
+        strcat (merge_words, words[i]); // запысываем значение words[i]
+        strcat (merge_words, " "); // потом добавляем пробел
     }
-    strcat (cout, words[n - 1]); // записываем в cout значение последней переменной
-    return cout;
+    strcat (merge_words, words[n - 1]); // записываем значение последней переменной (без пробела)
+    return merge_words;
 }
 
 int main () {
@@ -20,5 +20,5 @@ int main () {
         "my",
         "profession"
     };
-    printf("%s ", join(words, 4));
+    printf("%s ", join (words, 4));
 }
